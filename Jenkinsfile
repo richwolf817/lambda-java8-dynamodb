@@ -11,13 +11,6 @@ agent any
             steps {
                 sh 'mvn test'
             }
-            if('target/surefire-reports/*.xml') {
-            post {
-                always {
-                    junit 'target/surefire-reports/*.xml'
-                }
-            }
-            }
         }
         stage('Deliver') {
             steps {
